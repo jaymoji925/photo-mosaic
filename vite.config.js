@@ -8,7 +8,7 @@ const buildTime = new Date().toLocaleString('zh-CN', {
 
 export default defineConfig({
   plugins: [vue()],
-  base: process.env.VERCEL ? '/' : '/photo-mosaic/',
+  base: (process.env.VERCEL || process.env.CF_PAGES) ? '/' : '/photo-mosaic/',
   define: {
     __BUILD_TIME__: JSON.stringify(buildTime)
   }
